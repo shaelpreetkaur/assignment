@@ -1,0 +1,253 @@
+* {
+  
+  box-sizing: border-box;
+  text-align: center;
+}
+main {
+  padding-top: 150px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto; /* Center the container */
+  padding: 20px;
+  text-align: center;
+}
+
+header, nav, main, footer {
+  width: 100%;
+  text-align: center; /* Center text in header, nav, main, and footer */
+}
+
+header {
+  width: 100%;
+    background-color: #1a5f7a;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 5px;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1.title {
+  color: #FFD700;
+  font-size: 36px;
+  margin: 0 auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+    overflow: hidden; /* Hide overflow */
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: yellow;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  nav ul {
+      flex-direction: column; /* Stack items vertically on small screens */
+      align-items: center;
+  }
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-align: center;
+  color: #007bff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+p, label {
+  text-align: center; /* Center text in paragraphs and labels */
+}
+
+.contact-form {
+  border: 2px dashed #ccc;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto; /* Center the form */
+  position: relative;
+  z-index: 2;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  background-color: #1a5f7a;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: darkred;
+  transform: scale(1.05);
+  text-transform: uppercase; /* Apply uppercase on hover if needed */
+}
+
+table {
+  margin: 0 auto; /* Center the table */
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#slider {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img, .slides video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.slider-arrow {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+#next-page {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#next-page button {
+  position: relative;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase; /* Make button text uppercase */
+}
+
+#next-page button:after {
+  content: attr(name);
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  background-color: #fff;
+  padding-top: 5px;
+  text-transform: uppercase; /* Ensure the content is uppercase */
+}
+
+#next-page button:hover {
+  background-color: darkred;
+  
+}
+#slider {
+  position: relative;
+  max-width: 800px;
+  height: 800px; /* Set the height to match the width for a square aspect ratio */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%; /* Ensure the slides take up the full height of the slider */
+}
+
+.slides img, .slides video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the content covers the slider area */
+  border-radius: 10px;
+}
