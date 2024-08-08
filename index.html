@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Killer Whale (Orca)</title>
+    <link rel="stylesheet" href="stylesass.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .overview-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.overview-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+        /* Lightbox Styles */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #lightbox-content {
+            position: relative;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        #lightbox-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #lightbox-img, #lightbox-video {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        #lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .lightbox-arrow {
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .gallery-items img, .gallery-items video {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Killer Whale (Orcinus orca)</h1>
+        <nav id="navbar">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#characteristics">Characteristics</a></li>
+                <li><a href="#habitat">Habitat</a></li>
+                <li><a href="#behavior">Behavior</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#count">World Count</a></li>
+                <li><a href="honesty.html">Honesty</a></li>
+                <li><a href="form.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p class="overview-text">
+                The killer whale, sometimes referred to as the orca and scientifically named Orcinus orca, is a fascinating marine species that captivates people's attention all around the world. These sentient beings are actually the largest members of the dolphin family, despite their moniker.
+            </p>
+        </section>
+
+        <section id="characteristics">
+            <h2>Physical Characteristics</h2>
+            <p>With their remarkable black and white coloring, which includes a white underbelly, white patches around their eyes, and a gray saddle patch behind their dorsal fin, orcas are easily recognized. While females are slightly smaller, adult males can reach lengths of up to 32 feet and weights of up to 22,000 pounds.</p>
+        </section>
+
+        <section id="habitat">
+            <h2>Habitat and Distribution</h2>
+            <p>Killer whales can be found in every ocean on Earth, including tropical waters and the icy Arctic and Antarctic. They are most frequently observed, meanwhile, in colder waters that are productive.</p>
+        </section>
+
+        <section id="behavior">
+            <h2>Behavior and Social Structure</h2>
+            <p>The intricate social structure of killer whales is among their most remarkable features. They reside in close-knit family units known as pods, which can have as many as 40 members. Matriarchs lead these pods, which exhibit complex hunting strategies and vocalizations that are frequently unique to them. These behaviors resemble cultural traditions that have been passed down through the years.</p>
+        </section>
+
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-items">
+                <img src="thomas-lipke.jpg" alt="Killer Whale breaching the water surface" data-type="image">
+                <img src="mike-doherty.jpg" alt="A Pod of Killer Whales swimming together" data-type="image">
+                <img src="iewek-gnos.jpg" alt="A Killer Whale underwater" data-type="image">
+                <img src="leslie-driskill.jpg" alt="Killer Whales performing in water park" data-type="image">
+                <img src="will-turner.jpg" alt="A Killer Whale swimming with its calf" data-type="image">
+                <video src="killerwhale1.mp4" data-type="video"></video>
+                <video src="WhalesWithoutWalls.mp4" data-type="video"></video>
+            </div>
+        </section>
+
+        <section id="count">
+            <h2>World Count</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th>Estimated Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>North Pacific</td>
+                        <td>25,000</td>
+                    </tr>
+                    <tr>
+                        <td>Antarctic</td>
+                        <td>70,000</td>
+                    </tr>
+                    <tr>
+                        <td>Norwegian Coast</td>
+                        <td>3,000</td>
+                    </tr>
+                    <tr>
+                        <td>North Atlantic</td>
+                        <td>10,000</td>
+                    </tr>
+                    <tr>
+                        <td>Other Regions</td>
+                        <td>Unknown</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Orca The Killer Whales</p>
+    </footer>
+    <button id="next-page" onclick="window.location.href='form.html'">Next Page</button>
+
+    <!-- Lightbox HTML -->
+    <div id="lightbox">
+        <div id="lightbox-content">
+            <span id="lightbox-close">&times;</span>
+            <div id="lightbox-nav">
+                <span class="lightbox-arrow" id="lightbox-prev">&#10094;</span>
+                <span class="lightbox-arrow" id="lightbox-next">&#10095;</span>
+            </div>
+            <img id="lightbox-img" src="" alt="Lightbox Image" style="display: none;">
+            <video id="lightbox-video" controls style="display: none;">
+                <source id="lightbox-video-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const items = $('.gallery-items img, .gallery-items video');
+            let currentIndex = 0;
+
+            function showItem(index) {
+                const item = items.eq(index);
+                const type = item.data('type');
+
+                if (type === 'image') {
+                    $('#lightbox-video').hide();
+                    $('#lightbox-img').attr('src', item.attr('src')).show();
+                } else if (type === 'video') {
+                    $('#lightbox-img').hide();
+                    $('#lightbox-video-source').attr('src', item.attr('src'));
+                    $('#lightbox-video').show()[0].load();
+                }
+
+                $('#lightbox').fadeIn();
+            }
+
+            items.on('click', function() {
+                currentIndex = items.index(this);
+                showItem(currentIndex);
+            });
+
+            $('#lightbox-close, #lightbox').on('click', function() {
+                $('#lightbox').fadeOut();
+            });
+
+            $('#lightbox-content').on('click', function(e) {
+                e.stopPropagation();
+            });
+
+            $('#lightbox-prev').on('click', function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : items.length - 1;
+                showItem(currentIndex);
+            });
+
+            $('#lightbox-next').on('click', function() {
+                currentIndex = (currentIndex < items.length - 1) ? currentIndex + 1 : 0;
+                showItem(currentIndex);
+            });
+        });
+    $(document).ready(function() {
+        var navbar = $('#navbar');
+        var sticky = navbar.offset().top;
+
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > sticky) {
+                navbar.addClass('fixed');
+            } else {
+                navbar.removeClass('fixed');
+            }
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            const overviewText = document.querySelector('.overview-text');
+            overviewText.classList.add('visible');
+        }, 500);
+    });
+    </script>
+</body>
+</html>
